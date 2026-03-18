@@ -1,0 +1,123 @@
+@Laraib115 ➜ /workspaces/codespaces-blank $ sudo adduser laraib
+info: Adding user 'laraib' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group 'laraib' (1002) ...
+info: Adding new user 'laraib' (1002) with group 'laraib (1002)' ...
+info: Creating home directory '/home/laraib' ...
+info: Copying files from '/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for laraib
+Enter the new value, or press ENTER for the default
+    Full Name []: laraib
+    Room Number []:
+    Work Phone []:
+    Home Phone []:
+    Other []:
+Is the information correct? [Y/n] y
+info: Adding new user 'laraib' to supplemental / extra groups 'users' ...
+info: Adding user 'laraib' to group 'users' ...
+
+@Laraib115 ➜ /workspaces/codespaces-blank $ sudo passwd laraib
+New password:
+Retype new password:
+passwd: password updated successfully
+
+@Laraib115 ➜ /workspaces/codespaces-blank $ sudo usermod -aG sudo laraib
+@Laraib115 ➜ /workspaces/codespaces-blank $ su - laraib
+Password:
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+rm: cannot remove '/usr/local/share/nvm/current': Permission denied
+
+laraib@codespaces-560596:/workspaces/codespaces-blank$ sudo addgroup group0
+[sudo] password for laraib:
+info: Selecting GID from range 1000 to 59999 ...
+info: Adding group 'group0' (GID 1003) ...
+
+laraib@codespaces-560596:/workspaces/codespaces-blank$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:
+floppy:x:25:
+tape:x:26:
+sudo:x:27:laraib
+audio:x:29:
+dip:x:30:
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:
+staff:x:50:
+games:x:60:
+users:x:100:laraib
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+messagebus:x:101:
+polkitd:x:997:
+_ssh:x:102:
+codespace:x:1000:
+hugov:x:996:codespace
+nvm:x:995:codespace
+nvs:x:994:codespace
+conda:x:993:codespace
+php:x:992:codespace
+rvm:x:991:codespace
+sdkman:x:990:codespace
+ssh:x:1001:codespace
+docker:x:103:codespace
+golang:x:989:codespace
+oryx:x:998:codespace
+python:x:987:codespace
+pipx:x:986:codespace
+laraib:x:1002:
+group0:x:1003:
+
+laraib@codespaces-560596:/workspaces/codespaces-blank$ sudo usermod -aG group0 laraib
+laraib@codespaces-560596:/workspaces/codespaces-blank$ groups laraib
+laraib : laraib sudo users group0
+
+laraib@codespaces-560596:/workspaces/codespaces-blank$ sudo gpasswd -d laraib group0
+Removing user laraib from group group0
+
+laraib@codespaces-560596:/workspaces/codespaces-blank$ groups laraib
+laraib : laraib sudo users
+
+laraib@codespaces-560596:/workspaces/codespaces-blank$ sudo groupdel group0
+
+laraib@codespaces-560596:/workspaces/codespaces-blank$ history 15
+ 1  sudo addgroup group0
+ 2  cat /etc/group
+ 3  sudo usermod -aG group0 laraib
+ 4  groups laraib
+ 5  sudo gpasswd -d laraib group0
+ 6  groups laraib
+ 7  sudo groupdel group0
+ 8  history 15
+
+laraib@codespaces-560596:/workspaces/codespaces-blank$
